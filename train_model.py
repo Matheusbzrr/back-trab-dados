@@ -6,8 +6,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 import pickle
 
-client = MongoClient("mongodb://localhost:27017/")
-db = client["meu_banco"]
+MONGO_URI = os.getenv("MONGO_URI")
+client = MongoClient(MONGO_URI)
+db = client["trabDados"]
 colecao = db["meus_dados"]
 
 dados = list(colecao.find({}, {"_id": 0}))
