@@ -1,0 +1,15 @@
+# Ignorar a virtualenv
+venv/
+ENV/
+env/
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar arquivos Python compilados
+__pycache__/
+*.py[cod]
+
+# Ignorar arquivos temporários do editor
+*.swp
+*.swo

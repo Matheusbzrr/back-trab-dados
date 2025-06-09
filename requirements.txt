@@ -4,5 +4,6 @@ pymongo
 pandas
 numpy
 xgboost==1.7.6
-scikit-learn==1.6.1
+scikit-learn==1.7.0
 python-dotenv
+gunicorn
