@@ -1,1 +1,63 @@
-readme
+📊 API de Predição e Gerenciamento de Casos com Flask + MongoDB + Machine Learning
+🚀 Tecnologias Utilizadas
+- Python 3.10+
+- Flask
+- Flask-CORS
+- PyMongo
+- Pandas
+- NumPy
+- XGBoost ==1.7.6
+- Scikit-Learn ==1.7.0
+- python-dotenv
+- Gunicorn
+- MongoDB
+📦 Instalação
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+python -m venv venv
+source venv/bin/activate  # ou venv\Scripts\activate no Windows
+pip install -r requirements.txt
+
+Crie um arquivo `.env` com:
+MONGO_URI=mongodb+srv://<usuario>:<senha>@cluster.mongodb.net/<nome-do-banco>?retryWrites=true&w=majority
+▶️ Executando Localmente
+flask run
+
+Ou com gunicorn:
+gunicorn app:app
+🌐 Endpoints da API
+GET    /api/casos                - Lista todos os casos
+POST   /api/casos                - Cria novo caso (JSON esperado)
+GET    /api/casos/<data>         - Retorna caso específico
+DELETE /api/casos/<data>         - Remove caso
+GET    /api/associacoes          - Prepara dados para análise
+POST   /api/predizer             - Prediz classe de novo caso
+GET    /api/modelo/coeficientes - Mostra importâncias das variáveis
+🔍 Exemplo de Payload para Predição
+{
+"idade": 34,
+"etnia": "Parda",
+"localizacao": "Centro"
+}
+🔁 Resposta da Predição
+{
+"classe_predita": "Assalto",
+"probabilidades": {
+"Assalto": 0.62,
+"Furto": 0.21,
+"Tráfico": 0.09,
+"Violência doméstica": 0.08
+}
+}
+💾 Modelo de Machine Learning
+O arquivo `model.pkl` contém:
+- Pré-processador (OneHotEncoder, scaler)
+- Classificador XGBoost
+- LabelEncoder para a saída
+
+
+📬 Contato
+Matheus Bezerra
+Email: matheusbzrr3@gmail.com
+LinkedIn: https://www.linkedin.com/in/matheus-bzrr/
+
